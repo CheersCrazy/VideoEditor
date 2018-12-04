@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">VideoEditorModule</string>
+    <string name="msg_size_limit">请压缩和剪切后上传，文件最大只支持</string>
+    <string name="msg_amount_limit">已达到选择数量上限</string>
+    <string name="video">视频</string>
+    <string name="READ_EXTERNAL_STORAGE">需要打开读取存储权限</string>
+    <string name="done">完成</string>
 </resources>
