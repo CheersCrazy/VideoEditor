@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="ip_color_accent">#1AAD19</color>
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
@@ -9,4 +10,10 @@
     <color name="main_color">#4CB7AD</color>
     <color name="half_transparent">#40000000</color>
     <color name="theme_body">#cc22292c</color>
+    <color name="ip_color_press">#ffe0e0e0</color>
+    <color name="ip_camera_pre">#353535</color>
+    <color name="ip_color_primary_dark">#303135</color>
+    <color name="ip_text_primary_inverted">#ffffff</color>
+    <color name="ip_text_secondary_inverted">#66ffffff</color>
+    <color name="ip_color_primary">#393A3F</color>
 </resources>

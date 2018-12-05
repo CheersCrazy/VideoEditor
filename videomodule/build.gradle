@@ -6,10 +6,11 @@ android {
     defaultConfig {
         applicationId "com.yixia.videoeditor"
         minSdkVersion 16
-        targetSdkVersion 20
+        targetSdkVersion 22
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        vectorDrawables.useSupportLibrary = true
     }
 
     buildTypes {
@@ -41,4 +42,5 @@ dependencies {
     implementation 'pub.devrel:easypermissions:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
     implementation 'com.google.android.exoplayer:exoplayer-core:2.8.2'
+    implementation 'com.github.chrisbanes.photoview:library:1.2.4'
 }

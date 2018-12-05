@@ -5,4 +5,14 @@
     <string name="video">视频</string>
     <string name="READ_EXTERNAL_STORAGE">需要打开读取存储权限</string>
     <string name="done">完成</string>
+    <string name="ip_folder_image_count">共%1$d张</string>
+    <string name="ip_select_limit">最多选择%1$d张图片</string>
+    <string name="ip_all_images">所有图片</string>
+    <string name="ip_select_complete">完成(%1$d/%2$d)</string>
+    <string name="ip_preview_count">预览(%1$d)</string>
+    <string name="ip_complete">完成</string>
+    <string name="ip_preview">预览</string>
+    <string name="ip_preview_image_count">%1$d/%2$d</string>
+    <string name="ip_origin">原图</string>
+    <string name="ip_origin_size">原图(%1$s)</string>
 </resources>
