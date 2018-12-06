@@ -42,7 +42,8 @@
             android:name=".pickerimage.ui.ImagePreviewDelActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:screenOrientation="portrait"
-            android:theme="@style/ImagePickerThemeFullScreen"/>
+            android:theme="@style/ImagePickerThemeFullScreen" />
+
         <provider
             android:name=".pickerimage.ImagePickerProvider"
             android:authorities="${applicationId}.provider"
@@ -52,6 +53,13 @@
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/provider_paths" />
         </provider>
+
+        <activity
+            android:name=".recordaudio.pickervideo.PickerActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+        <activity android:name=".recordaudio.recordvideo.RecordedActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar"
+            />
     </application>
 
 </manifest>

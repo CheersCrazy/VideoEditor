@@ -6,20 +6,18 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.view.View;
+import android.widget.Toast;
 
 import com.yixia.videoeditor.pickerimage.ImagePicker;
 import com.yixia.videoeditor.pickerimage.bean.ImageItem;
 import com.yixia.videoeditor.pickerimage.loader.GlideImageLoader;
 import com.yixia.videoeditor.pickerimage.ui.ImageGridActivity;
 import com.yixia.videoeditor.pickerimage.ui.ImagePreviewDelActivity;
-import com.yixia.videoeditor.recordaudio.camera.util.Log;
 import com.yixia.videoeditor.recordaudio.pickervideo.PickerActivity;
 import com.yixia.videoeditor.recordaudio.pickervideo.PickerConfig;
 import com.yixia.videoeditor.recordaudio.recordvideo.RecordedActivity;
 import com.yixia.videoeditor.selectphotos.SelectDialog;
 
-import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -32,9 +30,12 @@ public abstract class BaseVideoActivity extends Activity implements EasyPermissi
 
     public static final int REQUEST_CODE_SELECT = 100;
     int REQUEST_CODE_PREVIEW = 101;
-
+    SelectDialog selectDialog;
+    boolean selectVideo;
+    int requestCode;//图片requestcode
+    private int maxImgCount = 3;
     protected Activity mContext;
-    ArrayList<ImageItem> images;
+    ArrayList<ImageItem> images = new ArrayList<>();
     String selectVideoPath;
 
     @Override
@@ -44,21 +45,6 @@ public abstract class BaseVideoActivity extends Activity implements EasyPermissi
         initImagePicker();
     }
 
-    @Override
-    protected void onResume() {
-        super.onResume();
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-    }
-
-    SelectDialog selectDialog;
-    boolean selectVideo;
-    int requestCode;//图片requestcode
-    private int maxImgCount = 3;
-    ArrayList<ImageItem> selImageList = new ArrayList<>();
 
     public void showSelectDialog(Boolean isFromVideo, int isRequestCode) {
         selectDialog = new SelectDialog(this, R.style.transparentFrameWindowStyle);
@@ -84,7 +70,7 @@ public abstract class BaseVideoActivity extends Activity implements EasyPermissi
             startActivityForResult(new Intent(mContext, RecordedActivity.class), REQUEST_CODE_SELECT);
         } else {
             Bundle bundle = new Bundle();
-            bundle.putSerializable(ImageGridActivity.EXTRAS_IMAGES, selImageList);
+            bundle.putSerializable(ImageGridActivity.EXTRAS_IMAGES, images);
             ImagePicker.getInstance().setSelectLimit(maxImgCount);
             Intent intent = new Intent(this, ImageGridActivity.class);
             intent.putExtra(ImageGridActivity.EXTRAS_TAKE_PICKERS, true); // 是否是直接打开相机
@@ -101,7 +87,7 @@ public abstract class BaseVideoActivity extends Activity implements EasyPermissi
             //打开选择,本次允许选择的数量
             ImagePicker.getInstance().setSelectLimit(maxImgCount);
             Bundle bundle = new Bundle();
-            bundle.putSerializable(ImageGridActivity.EXTRAS_IMAGES, selImageList);
+            bundle.putSerializable(ImageGridActivity.EXTRAS_IMAGES, images);
             Intent intent1 = new Intent(this, ImageGridActivity.class);
             intent1.putExtras(bundle);
             startActivityForResult(intent1, requestCode);
@@ -109,16 +95,24 @@ public abstract class BaseVideoActivity extends Activity implements EasyPermissi
 
     }
 
-
-
-    public void addImages() {
-        showSelectDialog(false, requestCode);
-    }
-
-    public void showImages() {
+    /**
+     * 展示images
+     *
+     * @param images
+     * @param position
+     */
+    public void showSelectImages(ArrayList<ImageItem> images, int position) {
+        if (images == null || images.size() <= 0) {
+            Toast.makeText(this, "照片不能为空", Toast.LENGTH_LONG).show();
+            return;
+        }
+        if (position > images.size()) {
+            Toast.makeText(this, "照片显示位置不正确", Toast.LENGTH_LONG).show();
+            return;
+        }
         Intent intentPreview = new Intent(this, ImagePreviewDelActivity.class);
         intentPreview.putExtra(ImagePicker.EXTRA_IMAGE_ITEMS, images);
-        intentPreview.putExtra(ImagePicker.EXTRA_SELECTED_IMAGE_POSITION, 1);
+        intentPreview.putExtra(ImagePicker.EXTRA_SELECTED_IMAGE_POSITION, 0);
         intentPreview.putExtra(ImagePicker.EXTRA_FROM_ITEMS, true);
         startActivityForResult(intentPreview, REQUEST_CODE_PREVIEW);
     }
@@ -136,42 +130,21 @@ public abstract class BaseVideoActivity extends Activity implements EasyPermissi
         imagePicker.setOutPutY(1000);                         //保存文件的高度。单位像素
     }
 
-    public ArrayList<ImageItem> getImages() {
-        return images;
-    }
-
-    public String getSelectVideoPath() {
-        return selectVideoPath;
-    }
-
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (resultCode == ImagePicker.RESULT_CODE_ITEMS) {
             //添加图片返回
-            if (data != null && requestCode == requestCode) {
+            if (data != null) {
                 images = (ArrayList<ImageItem>) data.getSerializableExtra(ImagePicker.EXTRA_RESULT_ITEMS);
-                if (images != null) {
-                    selImageList.clear();
-                    selImageList.addAll(images);
-                }
             }
         } else if (resultCode == ImagePicker.RESULT_CODE_BACK) {
             //预览图片返回
-            if (data != null && requestCode == REQUEST_CODE_PREVIEW) {
+            if (data != null) {
                 images = (ArrayList<ImageItem>) data.getSerializableExtra(ImagePicker.EXTRA_IMAGE_ITEMS);
-                if (images != null) {
-                    selImageList.clear();
-                    selImageList.addAll(images);
-                }
             }
         } else if (resultCode == PickerConfig.RESULT_CODE && data != null) {
             selectVideoPath = data.getStringExtra(PickerConfig.EXTRA_RESULT);
-            File file = new File(selectVideoPath);
-            if (file.exists()) {
-                Log.d("==============" + file.length());
-            }
-            Log.d("==============");
         }
     }
 
