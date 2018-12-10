@@ -1,10 +1,11 @@
-package com.yixia.videoeditor;
+package com.yixia.videoeditors;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 
-public class MainActivity extends Activity implements View.OnClickListener {
+import com.yixia.videoeditor.BaseVideoActivity;
+
+public class MainActivity extends BaseVideoActivity implements View.OnClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -14,11 +15,10 @@ public class MainActivity extends Activity implements View.OnClickListener {
         findViewById(R.id.showImage).setOnClickListener(this);
         findViewById(R.id.GetVideos).setOnClickListener(this);
     }
-
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            /*case R.id.add_Image:
+            case R.id.add_Image:
                 showSelectDialog(false, requestCode);
                 break;
             case R.id.showImage:
@@ -26,7 +26,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 break;
             case R.id.GetVideos:
                 showSelectDialog(true, requestCode);
-                break;*/
+                break;
         }
     }
 }

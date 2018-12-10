@@ -32,11 +32,11 @@ public abstract class BaseVideoActivity extends Activity implements EasyPermissi
     int REQUEST_CODE_PREVIEW = 101;
     SelectDialog selectDialog;
     boolean selectVideo;
-    int requestCode;//图片requestcode
+    public int requestCode;//图片requestcode
     private int maxImgCount = 3;
     protected Activity mContext;
-    ArrayList<ImageItem> images = new ArrayList<>();
-    String selectVideoPath;
+    public ArrayList<ImageItem> images = new ArrayList<>();
+    public String selectVideoPath;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {

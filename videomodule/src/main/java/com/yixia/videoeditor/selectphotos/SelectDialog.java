@@ -72,23 +72,21 @@ public class SelectDialog extends Dialog implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.mBtn_Cancel:
-                dismiss();
-                break;
-            case R.id.mBtn_photo:
-                dismiss();
-                if (onSelectClickListener != null) {
-                    onSelectClickListener.onClickPhoto();
-                }
-                break;
-            case R.id.mBtn_caneme:
-                dismiss();
-                if (onSelectClickListener != null) {
-                    onSelectClickListener.onClickCamera();
-                }
-                break;
+        int id = v.getId();
+        if (id == R.id.mBtn_Cancel) {
+            dismiss();
+        } else if (id == R.id.mBtn_photo) {
+            dismiss();
+            if (onSelectClickListener != null) {
+                onSelectClickListener.onClickPhoto();
+            }
+        } else if (id == R.id.mBtn_caneme) {
+            dismiss();
+            if (onSelectClickListener != null) {
+                onSelectClickListener.onClickCamera();
+            }
         }
+
     }
 
 
