@@ -1,4 +1,4 @@
-package com.yixia.videoeditor.pickerimage.util;
+package com.yixia.videoeditor.utils;
 
 import android.app.Activity;
 import android.content.Context;

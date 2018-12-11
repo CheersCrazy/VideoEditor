@@ -22,9 +22,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
-
-        </activity>
+        <activity android:name=".MainActivity" />
         <activity android:name=".pickerimage.ui.ImageBaseActivity" />
         <activity
             android:name=".pickerimage.ui.ImagePreviewActivity"
@@ -53,9 +51,9 @@
         <activity
             android:name=".recordaudio.pickervideo.PickerActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
-        <activity android:name=".recordaudio.recordvideo.RecordedActivity"
-            android:theme="@style/Theme.AppCompat.NoActionBar"
-            />
+        <activity
+            android:name=".recordaudio.recordvideo.RecordedActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
     </application>
 
 </manifest>

@@ -18,8 +18,8 @@ import android.util.Log;
 import com.yixia.videoeditor.pickerimage.bean.ImageFolder;
 import com.yixia.videoeditor.pickerimage.bean.ImageItem;
 import com.yixia.videoeditor.pickerimage.loader.ImageLoader;
-import com.yixia.videoeditor.pickerimage.util.ProviderUtil;
-import com.yixia.videoeditor.pickerimage.util.Utils;
+import com.yixia.videoeditor.utils.ProviderUtil;
+import com.yixia.videoeditor.utils.Utils;
 import com.yixia.videoeditor.pickerimage.view.CropImageView;
 
 import java.io.File;

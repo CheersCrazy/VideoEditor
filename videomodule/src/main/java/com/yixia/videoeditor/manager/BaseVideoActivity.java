@@ -1,4 +1,4 @@
-package com.yixia.videoeditor;
+package com.yixia.videoeditor.manager;
 
 import android.Manifest;
 import android.app.Activity;
@@ -8,6 +8,7 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.widget.Toast;
 
+import com.yixia.videoeditor.R;
 import com.yixia.videoeditor.pickerimage.ImagePicker;
 import com.yixia.videoeditor.pickerimage.bean.ImageItem;
 import com.yixia.videoeditor.pickerimage.loader.GlideImageLoader;
@@ -16,7 +17,6 @@ import com.yixia.videoeditor.pickerimage.ui.ImagePreviewDelActivity;
 import com.yixia.videoeditor.recordaudio.pickervideo.PickerActivity;
 import com.yixia.videoeditor.recordaudio.pickervideo.PickerConfig;
 import com.yixia.videoeditor.recordaudio.recordvideo.RecordedActivity;
-import com.yixia.videoeditor.selectphotos.SelectDialog;
 
 import java.util.ArrayList;
 import java.util.List;

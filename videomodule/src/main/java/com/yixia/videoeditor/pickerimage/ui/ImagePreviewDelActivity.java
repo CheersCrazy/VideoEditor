@@ -12,7 +12,7 @@ import android.widget.ImageView;
 
 import com.yixia.videoeditor.R;
 import com.yixia.videoeditor.pickerimage.ImagePicker;
-import com.yixia.videoeditor.pickerimage.util.NavigationBarChangeListener;
+import com.yixia.videoeditor.utils.NavigationBarChangeListener;
 
 
 public class ImagePreviewDelActivity extends ImagePreviewBaseActivity implements View.OnClickListener {

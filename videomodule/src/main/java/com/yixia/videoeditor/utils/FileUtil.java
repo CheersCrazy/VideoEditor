@@ -1,4 +1,4 @@
-package com.yixia.videoeditor.resourcerecord.utils;
+package com.yixia.videoeditor.utils;
 
 import android.os.Environment;
 

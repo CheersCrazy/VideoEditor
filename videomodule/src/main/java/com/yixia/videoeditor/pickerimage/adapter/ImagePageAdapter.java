@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 
 import com.yixia.videoeditor.pickerimage.ImagePicker;
 import com.yixia.videoeditor.pickerimage.bean.ImageItem;
-import com.yixia.videoeditor.pickerimage.util.Utils;
+import com.yixia.videoeditor.utils.Utils;
 
 import java.util.ArrayList;
 

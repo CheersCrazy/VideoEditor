@@ -12,7 +12,7 @@ import android.widget.TextView;
 import com.yixia.videoeditor.R;
 import com.yixia.videoeditor.pickerimage.ImagePicker;
 import com.yixia.videoeditor.pickerimage.bean.ImageFolder;
-import com.yixia.videoeditor.pickerimage.util.Utils;
+import com.yixia.videoeditor.utils.Utils;
 
 import java.util.ArrayList;
 import java.util.List;

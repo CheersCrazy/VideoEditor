@@ -18,8 +18,8 @@ import com.bumptech.glide.Glide;
 import com.yixia.videoeditor.R;
 import com.yixia.videoeditor.recordaudio.pickervideo.PickerConfig;
 import com.yixia.videoeditor.recordaudio.pickervideo.entity.Media;
-import com.yixia.videoeditor.resourcerecord.utils.FileUtil;
-import com.yixia.videoeditor.resourcerecord.utils.ScreenUtils;
+import com.yixia.videoeditor.utils.FileUtil;
+import com.yixia.videoeditor.utils.ScreenUtils;
 
 import java.util.ArrayList;
 

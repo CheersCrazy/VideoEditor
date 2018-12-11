@@ -41,4 +41,5 @@ dependencies {
     api 'pub.devrel:easypermissions:1.2.0'
     implementation 'com.google.android.exoplayer:exoplayer:2.8.2'
     implementation 'com.github.chrisbanes.photoview:library:1.2.4'
+    implementation 'cn.jzvd:jiaozivideoplayer:6.2.12'
 }

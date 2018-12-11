@@ -12,7 +12,7 @@ import android.widget.Toast;
 
 import com.yixia.videoeditor.R;
 import com.yixia.videoeditor.resourcerecord.handler.Dispatch;
-import com.yixia.videoeditor.resourcerecord.utils.FileUtil;
+import com.yixia.videoeditor.utils.FileUtil;
 
 
 /**

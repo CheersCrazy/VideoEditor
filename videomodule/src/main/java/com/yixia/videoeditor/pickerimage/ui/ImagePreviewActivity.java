@@ -15,8 +15,8 @@ import android.widget.Toast;
 import com.yixia.videoeditor.R;
 import com.yixia.videoeditor.pickerimage.ImagePicker;
 import com.yixia.videoeditor.pickerimage.bean.ImageItem;
-import com.yixia.videoeditor.pickerimage.util.NavigationBarChangeListener;
-import com.yixia.videoeditor.pickerimage.util.Utils;
+import com.yixia.videoeditor.utils.NavigationBarChangeListener;
+import com.yixia.videoeditor.utils.Utils;
 import com.yixia.videoeditor.pickerimage.view.SuperCheckBox;
 
 

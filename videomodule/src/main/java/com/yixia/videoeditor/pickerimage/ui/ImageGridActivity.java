@@ -26,7 +26,7 @@ import com.yixia.videoeditor.pickerimage.adapter.ImageFolderAdapter;
 import com.yixia.videoeditor.pickerimage.adapter.ImageRecyclerAdapter;
 import com.yixia.videoeditor.pickerimage.bean.ImageFolder;
 import com.yixia.videoeditor.pickerimage.bean.ImageItem;
-import com.yixia.videoeditor.pickerimage.util.Utils;
+import com.yixia.videoeditor.utils.Utils;
 import com.yixia.videoeditor.pickerimage.view.FolderPopUpWindow;
 import com.yixia.videoeditor.pickerimage.view.GridSpacingItemDecoration;
 

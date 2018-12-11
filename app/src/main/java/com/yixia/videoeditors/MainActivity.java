@@ -3,7 +3,7 @@ package com.yixia.videoeditors;
 import android.os.Bundle;
 import android.view.View;
 
-import com.yixia.videoeditor.BaseVideoActivity;
+import com.yixia.videoeditor.manager.BaseVideoActivity;
 
 public class MainActivity extends BaseVideoActivity implements View.OnClickListener {
 

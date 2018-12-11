@@ -1,4 +1,4 @@
-package com.yixia.videoeditor.selectphotos;
+package com.yixia.videoeditor.manager;
 
 import android.app.Activity;
 import android.app.Dialog;
